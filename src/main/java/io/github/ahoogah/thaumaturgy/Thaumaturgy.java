@@ -34,7 +34,9 @@ public class Thaumaturgy {
     public static final String MODID = "thaumaturgy";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "io.github.ahoogah.thaumaturgy.ClientProxy", serverSide = "io.github.ahoogah.thaumaturgy.CommonProxy")
+    @SidedProxy(
+        clientSide = "io.github.ahoogah.thaumaturgy.ClientProxy",
+        serverSide = "io.github.ahoogah.thaumaturgy.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
