@@ -26,7 +26,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nonnull;
 
 public enum Mixins implements IMixins {
-    ADD_MATERIALS(new MixinBuilder().addCommonMixins("ToolMaterialExt").setPhase(EARLY).setApplyIf(ALWAYS));
+    ADD_MATERIALS(new MixinBuilder().addCommonMixins("ToolMaterialExt", "ArmorMaterialExt").setPhase(EARLY).setApplyIf(ALWAYS));
 
     private final MixinBuilder builder;
 
