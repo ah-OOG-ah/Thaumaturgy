@@ -10,3 +10,9 @@ tasks.jar {
         "3RD-PARTY-LICENSES",
         "LICENSE")
 }
+
+spotless {
+    java {
+        targetExclude("src/main/java/thaumcraft/api/**/*.java")
+    }
+}

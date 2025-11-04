@@ -21,6 +21,7 @@ import net.minecraft.item.ItemArmor;
 /// Armor materials. These are left non-final for implementation reasons, and may finalize in the future - you may not
 /// mutate them!
 public class ArmorMats {
+
     public static ItemArmor.ArmorMaterial THAUMIUM;
     public static ItemArmor.ArmorMaterial SPECIAL;
     public static ItemArmor.ArmorMaterial FORTRESS;

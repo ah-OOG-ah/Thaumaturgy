@@ -20,8 +20,8 @@ import static io.github.ahoogah.thaumaturgy.api.materials.ToolMats.THAUMIUM;
 import static io.github.ahoogah.thaumaturgy.api.materials.ToolMats.THAUMIUM_ELEMENTAL;
 import static io.github.ahoogah.thaumaturgy.api.materials.ToolMats.VOID;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -44,12 +44,14 @@ public abstract class ToolMaterialExt {
     }
 
     @Invoker("<init>")
-    private static ToolMaterial thaum$init(String name, int ordinal, int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
+    private static ToolMaterial thaum$init(String name, int ordinal, int harvestLevel, int maxUses, float efficiency,
+        float damage, int enchantability) {
         throw new AssertionError("The invoker failed to apply!");
     }
 
     @Unique
-    private static ToolMaterial thaum$extendEnum(String name, int harvestLevel, int maxUses, float efficiency, float damage, int enchantability) {
+    private static ToolMaterial thaum$extendEnum(String name, int harvestLevel, int maxUses, float efficiency,
+        float damage, int enchantability) {
         assert $VALUES != null;
         final var mat = thaum$init(name, $VALUES.length, harvestLevel, maxUses, efficiency, damage, enchantability);
         final var newMats = new ToolMaterial[$VALUES.length + 1];

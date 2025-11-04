@@ -16,16 +16,19 @@
 
 package io.github.ahoogah.thaumaturgy;
 
-import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
-import com.gtnewhorizon.gtnhmixins.builders.IMixins;
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import io.github.ahoogah.thaumaturgy.mixins.Mixins;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+import com.gtnewhorizon.gtnhmixins.builders.IMixins;
+
+import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import io.github.ahoogah.thaumaturgy.mixins.Mixins;
+
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 public class ThaumaturgyCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
     @Override
     public String[] getASMTransformerClass() {
         return null;

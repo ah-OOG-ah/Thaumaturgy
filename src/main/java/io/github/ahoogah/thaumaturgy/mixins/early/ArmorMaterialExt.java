@@ -16,13 +16,14 @@
 
 package io.github.ahoogah.thaumaturgy.mixins.early;
 
+import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.FORTRESS;
 import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.SPECIAL;
 import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.THAUMIUM;
-import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.FORTRESS;
 import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.VOID;
 import static io.github.ahoogah.thaumaturgy.api.materials.ArmorMats.VOIDFORTRESS;
 
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -47,12 +48,14 @@ public abstract class ArmorMaterialExt {
     }
 
     @Invoker("<init>")
-    private static ArmorMaterial thaum$init(String name, int ordinal, int maxDamageFactor, int[] protections, int enchantability) {
+    private static ArmorMaterial thaum$init(String name, int ordinal, int maxDamageFactor, int[] protections,
+        int enchantability) {
         throw new AssertionError("The invoker failed to apply!");
     }
 
     @Unique
-    private static ArmorMaterial thaum$extendEnum(String name, int maxDamageFactor, int[] protections, int enchantability) {
+    private static ArmorMaterial thaum$extendEnum(String name, int maxDamageFactor, int[] protections,
+        int enchantability) {
         assert $VALUES != null;
         final var mat = thaum$init(name, $VALUES.length, maxDamageFactor, protections, enchantability);
         final var newMats = new ArmorMaterial[$VALUES.length + 1];

@@ -21,6 +21,7 @@ import net.minecraft.item.Item;
 /// Tool materials. These are left non-final for implementation reasons, and may finalize in the future - you may not
 /// mutate them!
 public class ToolMats {
+
     public static Item.ToolMaterial THAUMIUM;
     public static Item.ToolMaterial VOID;
     public static Item.ToolMaterial THAUMIUM_ELEMENTAL;
