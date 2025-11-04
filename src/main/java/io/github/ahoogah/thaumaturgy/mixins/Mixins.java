@@ -16,12 +16,17 @@
 
 package io.github.ahoogah.thaumaturgy.mixins;
 
+import static com.gtnewhorizon.gtnhmixins.builders.IBaseTransformer.Phase.EARLY;
+import static io.github.ahoogah.thaumaturgy.mixins.Mixins.Util.ALWAYS;
+import static io.github.ahoogah.thaumaturgy.mixins.Mixins.Util.NEVER;
+
 import com.gtnewhorizon.gtnhmixins.builders.IMixins;
 import com.gtnewhorizon.gtnhmixins.builders.MixinBuilder;
+import java.util.function.Supplier;
 import javax.annotation.Nonnull;
 
 public enum Mixins implements IMixins {
-    ;
+    ADD_MATERIALS(new MixinBuilder().addCommonMixins("ToolMaterialExt").setPhase(EARLY).setApplyIf(ALWAYS));
 
     private final MixinBuilder builder;
 
@@ -33,5 +38,10 @@ public enum Mixins implements IMixins {
     @Override
     public MixinBuilder getBuilder() {
         return builder;
+    }
+
+    static final class Util {
+        static final Supplier<Boolean> ALWAYS = () -> true;
+        static final Supplier<Boolean> NEVER = () -> false;
     }
 }
