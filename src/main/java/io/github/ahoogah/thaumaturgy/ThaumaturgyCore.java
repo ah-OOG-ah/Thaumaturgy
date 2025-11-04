@@ -28,17 +28,17 @@ import java.util.Set;
 public class ThaumaturgyCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
     @Override
     public String[] getASMTransformerClass() {
-        return new String[0];
+        return null;
     }
 
     @Override
     public String getModContainerClass() {
-        return "";
+        return null;
     }
 
     @Override
     public String getSetupClass() {
-        return "";
+        return null;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ThaumaturgyCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public String getAccessTransformerClass() {
-        return "";
+        return null;
     }
 
     @Override
